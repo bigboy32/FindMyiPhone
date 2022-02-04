@@ -49,8 +49,8 @@ def FMIP(username, password):
             print e.code
         if i == 2: 
             break
-        print "Sent \033[92mlocation\033[0m beacon to \033[91m[%s]\033[0m devices" % len(z["content"])
-        print "Awaiting response from iCloud..."
+        print("Sent \033[92mlocation\033[0m beacon to \033[91m[%s]\033[0m devices" % len(z["content"]))
+        print("Awaiting response from iCloud...")
         #okay, FMD request has been sent, now lets wait a bit for iCloud to get results, and then do again, and then break
         time.sleep(5)
     returnString = ""
@@ -84,6 +84,6 @@ def FMIP(username, password):
             returnString += "\033[92mCould not get GPS lock!\033[0m\n"
     return returnString
 
-username = raw_input("Apple ID: ")
+username = input("Apple ID: ")
 password = getpass.getpass()
-print FMIP(username, password),
+print(FMIP(username, password))
